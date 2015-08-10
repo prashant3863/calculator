@@ -20,8 +20,12 @@ module NumericalCalculator
         expect(default_calculator.add(2)).to eq(2.0)
       end
 
-      it "should update non zero accumulator" do
+      it "should update non zero positive accumulator" do
         expect(calulator_with_value_two.add(3)).to eq(5.0)
+      end
+
+      it "should update non zero negative accumulator" do
+        expect(calulator_with_value_two.add(-1)).to eq(1.0)
       end
     end
 
