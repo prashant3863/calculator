@@ -29,6 +29,10 @@ module NumericalCalculator
       end
     end
 
+    it "should update accumulator on subtraction" do
+      expect(default_calculator.subtract(2)).to eq(-2.0)
+    end
+
     context "multiply operation" do
       it "should update accumulator" do
         expect(default_calculator.multiply(3)).to eq(0.0)

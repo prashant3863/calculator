@@ -6,11 +6,14 @@ module NumericalCalculator
 
     def initialize(value = 0.0)
       @accumulator = value
-      @error = ""
     end
 
     def add(value)
       @accumulator += value
+    end
+
+    def subtract(value)
+      @accumulator -= value
     end
 
     def multiply(value)

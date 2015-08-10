@@ -11,7 +11,7 @@ module NumericalCalculator
     end
 
     def delegator
-      tokens = get_tokens(get_io)
+      tokens = get_tokens(get_input)
       if tokens[0] == "add" 
         @calculator.add(tokens[1].to_f);
       else
