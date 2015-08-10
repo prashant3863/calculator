@@ -2,23 +2,25 @@ require "spec_helper"
 
 module NumericalCalculator
   describe Calculator do
-    before(:each) do
-      @cal = Calculator.new
+    let(:calculator) { Calculator.new }
+
+    it "will check for initialized value" do
+      expect(calculator.accumulator).to eq(0.0)
     end
 
     context "add" do 
       it "should add value" do   
-        expect(@cal.add(2)).to eq(2.0)
+        expect(calculator.add(2)).to eq(2.0)
       end
 
       it "should add twice" do
-        @cal.add(2)
-        expect(@cal.add(3)).to eq(5.0)
+        calculator.add(2)
+        expect(calculator.add(3)).to eq(5.0)
       end
     end
 
     it "multiply with stored value" do
-      expect(@cal.multiply(3)).to eq(0.0)
+      expect(calculator.multiply(3)).to eq(0.0)
     end
   end
 end
