@@ -37,6 +37,10 @@ module NumericalCalculator
       it "should update non zero accumulator" do
         expect(calulator_with_value_two.multiply(3)).to eq(6.0)
       end
+
+      it "should update non zero negative accumulator" do
+        expect(calulator_with_value_two.multiply(-1)).to eq(-2.0)
+      end
     end
 
     it "should set accumulator to zero" do
