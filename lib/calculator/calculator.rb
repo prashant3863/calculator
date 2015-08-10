@@ -6,6 +6,7 @@ module NumericalCalculator
 
     def initialize(value = 0.0)
       @accumulator = value
+      @error = ""
     end
 
     def add(value)
@@ -18,6 +19,14 @@ module NumericalCalculator
 
     def cancel
       @accumulator = 0.0
+    end
+
+    def divide(value)
+      if value == 0 
+        :notanumber
+      else
+        @accumulator /= value
+      end
     end
   end
 end
