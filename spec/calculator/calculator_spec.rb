@@ -53,13 +53,17 @@ module NumericalCalculator
         expect(default_calculator.divide(3)).to eq(0.0)
       end
 
-      it "should update non zero accumulator" do
-          expect(calulator_with_value_two.divide(2)).to eq(1.0)
+      it "should update non zero positive accumulator" do
+        expect(calulator_with_value_two.divide(2)).to eq(1.0)
       end
 
       it "should give an error when accumulator is divide by zero" do
-          expect(calulator_with_value_two.divide(0)).to eq(:notanumber)
-      end      
+        expect(calulator_with_value_two.divide(0)).to eq(:notanumber)
+      end
+
+      it "should update non zero negative accumulator" do
+        expect(calulator_with_value_two.divide(-2)).to eq(-1.0)
+      end     
     end
   end
 end
