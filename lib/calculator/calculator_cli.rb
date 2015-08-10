@@ -6,16 +6,19 @@ module NumericalCalculator
       @calculator = calculator
     end
 
-    def get_io 
+    def get_input 
       input = Kernel.gets.chomp
     end
 
-    def get_input
+    def delegator
       tokens = get_tokens(get_io)
-      @calculator.add(tokens[1].to_f);
+      if tokens[0] == "add" 
+        @calculator.add(tokens[1].to_f);
+      else
+        @calculator.multiply(tokens[1].to_f);
+      end
     end
 
-    private
     def get_tokens(input)
       input.split(" ")
     end
