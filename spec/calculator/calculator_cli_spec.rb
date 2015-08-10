@@ -10,14 +10,19 @@ module NumericalCalculator
       expect(cli.get_input).to eq("add 5")
     end
 
-    it "should do foo" do
+    it "should return 5.0 when add 5 is the input" do
       allow(Kernel).to receive(:gets).and_return("add 5")
       expect(cli.delegator).to eq(5.0)
     end
 
-    it "should do bar" do
+    it "should retrun 0.0 when multiply 6 is the input" do
       allow(Kernel).to receive(:gets).and_return("multiply 6")
       expect(cli.delegator).to eq(0.0)
+    end
+
+    it "should retrun 2.0 when subtract 5 is the input" do
+      allow(Kernel).to receive(:gets).and_return("subtract 5")
+      expect(cli.delegator).to eq(-5.0)
     end
   end
 end

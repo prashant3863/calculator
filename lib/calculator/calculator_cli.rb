@@ -13,9 +13,11 @@ module NumericalCalculator
     def delegator
       tokens = get_tokens(get_input)
       if tokens[0] == "add" 
-        @calculator.add(tokens[1].to_f);
+        @calculator.add(tokens[1].to_f)
+      elsif tokens[0] == "multiply"
+        @calculator.multiply(tokens[1].to_f)
       else
-        @calculator.multiply(tokens[1].to_f);
+        @calculator.subtract(tokens[1].to_f)
       end
     end
 
