@@ -16,8 +16,10 @@ module NumericalCalculator
         @calculator.add(tokens[1].to_f)
       elsif tokens[0] == "multiply"
         @calculator.multiply(tokens[1].to_f)
-      else
+      elsif tokens[0] == "subtract"
         @calculator.subtract(tokens[1].to_f)
+      else
+        @calculator.divide(tokens[1].to_f)
       end
     end
 
