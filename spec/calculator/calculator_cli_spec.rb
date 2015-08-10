@@ -29,5 +29,10 @@ module NumericalCalculator
       allow(Kernel).to receive(:gets).and_return("divide 5")
       expect(cli.delegator).to eq(0.0)
     end
+
+    it "should return :no_operation when any invalid input is entered" do
+      allow(Kernel).to receive(:gets).and_return("invalid 5")
+      expect(cli.delegator).to eq(:no_operation)
+    end
   end
 end
