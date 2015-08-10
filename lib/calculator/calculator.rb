@@ -3,9 +3,10 @@ module NumericalCalculator
   class Calculator
 
     attr_reader :accumulator
-    
-    def initialize
-      @accumulator = 0.0
+
+    def initialize(value = 0.0)
+
+      @accumulator = value
     end
 
     def add(value)

@@ -2,25 +2,33 @@ require "spec_helper"
 
 module NumericalCalculator
   describe Calculator do
-    let(:calculator) { Calculator.new }
+    let(:default_calculator) { Calculator.new }
+    let(:paramaterized_calculator) { Calculator.new(2) }
 
-    it "will check for initialized value" do
-      expect(calculator.accumulator).to eq(0.0)
+    context "initialize" do
+      it "will check for initialized value" do
+        expect(default_calculator.accumulator).to eq(0.0)
+      end
+
+      it "it should initialised with a input value" do
+        expect(paramaterized_calculator.accumulator).to eq(2.0)
+      end
+
     end
 
     context "add" do 
       it "should add value" do   
-        expect(calculator.add(2)).to eq(2.0)
+        expect(default_calculator.add(2)).to eq(2.0)
       end
 
       it "should add twice" do
-        calculator.add(2)
-        expect(calculator.add(3)).to eq(5.0)
+        default_calculator.add(2)
+        expect(default_calculator.add(3)).to eq(5.0)
       end
     end
 
     it "multiply with stored value" do
-      expect(calculator.multiply(3)).to eq(0.0)
+      expect(default_calculator.multiply(3)).to eq(0.0)
     end
   end
 end
