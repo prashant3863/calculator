@@ -1,12 +1,14 @@
 module NumericalCalculator
+  #Represents a numerical calulator
   class Calculator
 
     def initialize
-      @value = 0
+      @value = 0.0
     end
 
     def add(number)
-      2.0
+      @value += number
+      @value
     end
 
   end
