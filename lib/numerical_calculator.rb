@@ -2,5 +2,5 @@ module NumericalCalculator
 
 end
 
-require "calculator/calculator"
-require "calculator/calculator_cli"
+require "numerical_calculator/calculator"
+require "numerical_calculator/calculator_cli"
