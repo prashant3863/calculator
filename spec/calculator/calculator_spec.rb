@@ -3,43 +3,41 @@ require "spec_helper"
 module NumericalCalculator
   describe Calculator do
     let(:default_calculator) { Calculator.new }
-    let(:paramaterized_calculator) { Calculator.new(2) }
+    let(:calulator_with_value_two) { Calculator.new(2) }
 
-    context "initialize" do
-      it "will check for initialized value" do
+    context "default values" do
+      it "should be zero" do
         expect(default_calculator.accumulator).to eq(0.0)
       end
 
-      it "it should initialised with a input value" do
-        expect(paramaterized_calculator.accumulator).to eq(2.0)
+      it "should be configurable" do
+        expect(calulator_with_value_two.accumulator).to eq(2.0)
       end
-
     end
 
-    context "add" do 
-      it "should add value" do   
+    context "addition operation" do 
+      it "should update accumulator" do   
         expect(default_calculator.add(2)).to eq(2.0)
       end
 
-      it "should add twice" do
-        default_calculator.add(2)
-        expect(default_calculator.add(3)).to eq(5.0)
+      it "should update non zero accumulator" do
+        expect(calulator_with_value_two.add(3)).to eq(5.0)
       end
     end
 
-    context "multiply" do
-      it "checks with default accumulator value" do
+    context "multiply operation" do
+      it "should update accumulator" do
         expect(default_calculator.multiply(3)).to eq(0.0)
       end
 
-      it "checks with non zero accumulator value" do
-        expect(paramaterized_calculator.multiply(3)).to eq(6.0)
+      it "should update non zero accumulator" do
+        expect(calulator_with_value_two.multiply(3)).to eq(6.0)
       end
     end
 
-    it "should make the accumulator to 0" do
-      paramaterized_calculator.cancel
-      expect(paramaterized_calculator.accumulator).to eq(0.0) 
+    it "should set accumulator to zero" do
+      calulator_with_value_two.cancel
+      expect(calulator_with_value_two.accumulator).to eq(0.0) 
     end
   end
 end
