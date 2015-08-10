@@ -16,5 +16,9 @@ module NumericalCalculator
         expect(@cal.add(3)).to eq(5.0)
       end
     end
+
+    it "multiply with stored value" do
+      expect(@cal.multiply(3)).to eq(0.0)
+    end
   end
 end

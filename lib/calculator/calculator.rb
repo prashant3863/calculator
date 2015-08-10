@@ -11,5 +11,8 @@ module NumericalCalculator
       @value
     end
 
+    def multiply(number)
+      0.0
+    end
   end
 end
