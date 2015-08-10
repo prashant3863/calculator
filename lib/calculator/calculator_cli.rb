@@ -10,8 +10,7 @@ module NumericalCalculator
       input = Kernel.gets.chomp
     end
 
-    def delegator
-      tokens = get_tokens(get_input)
+    def delegator(tokens)
       if tokens[0] == "add" 
         @calculator.add(tokens[1].to_f)
       elsif tokens[0] == "multiply"
@@ -20,11 +19,29 @@ module NumericalCalculator
         @calculator.subtract(tokens[1].to_f)
       elsif tokens[0] == "divide"
         @calculator.divide(tokens[1].to_f)
+      elsif tokens[0] == "cancel"
+        @calculator.cancel
+      elsif tokens[0] == "exit"
+        "exit"
       else
         :no_operation
       end
     end
 
+    def infinite_input
+      while(tokens = get_tokens(get_input))
+        output = delegator(tokens)
+        if output == "exit"
+          Process.exit
+        elsif output == :no_operation
+          puts "No Operation"
+        else
+          puts output
+        end
+      end
+    end
+
+    private
     def get_tokens(input)
       input.split(" ")
     end
