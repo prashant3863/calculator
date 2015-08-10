@@ -36,5 +36,10 @@ module NumericalCalculator
         expect(paramaterized_calculator.multiply(3)).to eq(6.0)
       end
     end
+
+    it "should make the accumulator to 0" do
+      paramaterized_calculator.cancel
+      expect(paramaterized_calculator.accumulator).to eq(0.0) 
+    end
   end
 end

@@ -5,7 +5,6 @@ module NumericalCalculator
     attr_reader :accumulator
 
     def initialize(value = 0.0)
-
       @accumulator = value
     end
 
@@ -15,6 +14,10 @@ module NumericalCalculator
 
     def multiply(value)
       @accumulator *= value
+    end
+
+    def cancel
+      @accumulator = 0.0
     end
   end
 end
