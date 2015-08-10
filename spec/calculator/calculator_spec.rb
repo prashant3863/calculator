@@ -27,8 +27,14 @@ module NumericalCalculator
       end
     end
 
-    it "multiply with stored value" do
-      expect(default_calculator.multiply(3)).to eq(0.0)
+    context "multiply" do
+      it "checks with default accumulator value" do
+        expect(default_calculator.multiply(3)).to eq(0.0)
+      end
+
+      it "checks with non zero accumulator value" do
+        expect(paramaterized_calculator.multiply(3)).to eq(6.0)
+      end
     end
   end
 end

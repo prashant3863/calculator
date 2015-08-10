@@ -14,7 +14,7 @@ module NumericalCalculator
     end
 
     def multiply(value)
-      0.0
+      @accumulator *= value
     end
   end
 end
