@@ -5,6 +5,7 @@ module NumericalCalculator
     let(:default_calculator) { Calculator.new }
     let(:calulator_with_value_two) { Calculator.new(2) }
     let(:calculator_with_negative_value_two){ Calculator.new(-2)}
+    let(:calculator_with_value_five){ Calculator.new(5)}
 
     context "default values" do
       it "should be zero" do
@@ -81,8 +82,14 @@ module NumericalCalculator
       end     
     end
 
-    it "get the absolute value of a number" do
-      expect(calculator_with_negative_value_two.abs).to eq(2.0)
+    context "absolute value operation" do 
+      it "returns positive value for negative input" do
+        expect(calculator_with_negative_value_two.abs).to eq(2.0)
+      end
+
+      it "returns positive value for positive input" do 
+        expect(calculator_with_value_five.abs).to eq(5.0)
+      end 
     end
   end
 end

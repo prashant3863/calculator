@@ -33,7 +33,11 @@ module NumericalCalculator
     end
 
     def abs 
-      2.0
-    end
+      if @accumulator < 0
+        @accumulator = -@accumulator 
+      else
+        @accumulator
+      end
+    end     
   end
 end
