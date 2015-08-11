@@ -41,7 +41,7 @@ module NumericalCalculator
     end
 
     def neg
-      -5.0
+      @accumulator = -@accumulator 
     end
   end
 end

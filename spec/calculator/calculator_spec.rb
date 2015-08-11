@@ -92,8 +92,14 @@ module NumericalCalculator
       end 
     end
 
-    it "should negate the accumulator" do
-      expect(calculator_with_value_five.neg).to eq(-5.0)
+    context "neg value operation" do 
+      it "should negate the positive accumulator" do
+        expect(calculator_with_value_five.neg).to eq(-5.0)
+      end
+
+      it "should negate negative acculmulator" do 
+        expect(calculator_with_negative_value_two.neg).to eq(2.0)
+      end
     end
   end
 end
