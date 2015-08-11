@@ -42,6 +42,10 @@ module NumericalCalculator
       expect(cli_two.delegator(["sqr"])).to eq(4.0)
     end
 
+    it "should return 8.0 when cube is called on accumulator with value -2" do
+      expect(cli_two.delegator(["cube"])).to eq(-8.0)
+    end
+
     it "should return :no_operation when any invalid input is entered" do
       expect(cli.delegator(["invalid", "5"])).to eq(:no_operation)
     end
