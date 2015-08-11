@@ -45,7 +45,7 @@ module NumericalCalculator
     end
 
     def sqrt
-      2.0
+      @accumulator < 0 ? :notanumber : Math.sqrt(@accumulator)
     end
   end
 end

@@ -103,8 +103,14 @@ module NumericalCalculator
       end
     end
 
-    it "should sqrt the accumulator" do
-      expect(calculator_with_value_four.sqrt).to eq(2.0)
+    context "Square root operation" do
+      it "should sqrt the accumulator" do
+        expect(calculator_with_value_four.sqrt).to eq(2.0)
+      end
+
+      it "should give error when accumulator is negative" do
+        expect(calculator_with_negative_value_two.sqrt).to eq(:notanumber)
+      end 
     end
   end
 end
