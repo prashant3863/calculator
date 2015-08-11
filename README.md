@@ -3,20 +3,23 @@ Represents a numerical calulator
 
 ##Prerequisites
 
-1. ruby
-2. bundler
-
+    ruby
+    bundler
 
 ##Build
 
-1. git clone https://github.com/vjdhama/calculator.git
-2. cd calculator
-3. bundle install
+    git clone https://github.com/vjdhama/calculator.git
+    cd calculator
+    bundle install
+
+##Run app
+
+    ruby bin/calculator_app
 
 ##Run specs
 
-1. bundle exec rspec
+    bundle exec rspec
 
 ##Run independent specs
 
-1. bundle exec rspec SPEC_FILE_PATH[:LINE]
+    bundle exec rspec SPEC_FILE_PATH[:LINE]
