@@ -4,6 +4,10 @@ module NumericalCalculator
   describe CalculatorCli do 
     let(:calculator) { Calculator.new }
     let(:cli) { CalculatorCli.new(calculator) }
+
+
+    let(:calculator_with_value_negative_two) { Calculator.new(-2) }
+    let(:cli_two) { CalculatorCli.new(calculator_with_value_negative_two) }
     
     it 'should get input' do
       allow(Kernel).to receive(:gets).and_return("add 5")
@@ -22,8 +26,12 @@ module NumericalCalculator
       expect(cli.delegator(["subtract", "5"])).to eq(-5.0)
     end
 
-    it "should retrun 0.0 when divided 5 is the input" do
+    it "should return 0.0 when divide 5 is the input" do
       expect(cli.delegator(["divide", "5"])).to eq(0.0)
+    end
+
+    it "should return 2.0 when abs is called on accumulator with value -2" do
+      expect(cli_two.delegator(["abs"])).to eq(2.0)
     end
 
     it "should return :no_operation when any invalid input is entered" do
