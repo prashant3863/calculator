@@ -57,7 +57,7 @@ module NumericalCalculator
     end
 
     def cube
-      6.0
+      @accumulator = @accumulator ** 3
     end
   end
 end

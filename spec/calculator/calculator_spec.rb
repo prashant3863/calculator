@@ -136,8 +136,12 @@ module NumericalCalculator
     end
 
     context "Cube Operation" do
-      it "should retrun cube of a positive accumulator" do 
-        expect(calculator_with_value_two.cube).to eq(6.0)
+      it "should return cube of a positive accumulator" do 
+        expect(calculator_with_value_two.cube).to eq(8.0)
+      end
+
+      it "should return cube for negative accumulator" do
+        expect(calculator_with_negative_value_three.cube).to eq(-27.0)
       end
     end
   end
