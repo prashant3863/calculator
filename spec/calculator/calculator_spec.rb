@@ -3,7 +3,7 @@ require "spec_helper"
 module NumericalCalculator
   describe Calculator do
     let(:default_calculator) { Calculator.new }
-    let(:calulator_with_value_two) { Calculator.new(2) }
+    let(:calculator_with_value_two) { Calculator.new(2) }
     let(:calculator_with_negative_value_two){ Calculator.new(-2)}
     let(:calculator_with_value_five){ Calculator.new(5)}
     let(:calculator_with_value_four){ Calculator.new(4)}
@@ -15,7 +15,7 @@ module NumericalCalculator
       end
 
       it "should be configurable" do
-        expect(calulator_with_value_two.accumulator).to eq(2.0)
+        expect(calculator_with_value_two.accumulator).to eq(2.0)
       end
     end
 
@@ -25,11 +25,11 @@ module NumericalCalculator
       end
 
       it "should update non zero positive accumulator" do
-        expect(calulator_with_value_two.add(3)).to eq(5.0)
+        expect(calculator_with_value_two.add(3)).to eq(5.0)
       end
 
       it "should update non zero negative accumulator" do
-        expect(calulator_with_value_two.add(-1)).to eq(1.0)
+        expect(calculator_with_value_two.add(-1)).to eq(1.0)
       end
     end
 
@@ -39,11 +39,11 @@ module NumericalCalculator
       end
 
       it "should update non zero positive accumulator" do
-        expect(calulator_with_value_two.subtract(2)).to eq(0.0)
+        expect(calculator_with_value_two.subtract(2)).to eq(0.0)
       end
 
       it "should update non zero negative accumulator" do
-        expect(calulator_with_value_two.subtract(-1)).to eq(3.0)
+        expect(calculator_with_value_two.subtract(-1)).to eq(3.0)
       end
     end
 
@@ -53,17 +53,17 @@ module NumericalCalculator
       end
 
       it "should update non zero accumulator" do
-        expect(calulator_with_value_two.multiply(3)).to eq(6.0)
+        expect(calculator_with_value_two.multiply(3)).to eq(6.0)
       end
 
       it "should update non zero negative accumulator" do
-        expect(calulator_with_value_two.multiply(-1)).to eq(-2.0)
+        expect(calculator_with_value_two.multiply(-1)).to eq(-2.0)
       end
     end
 
     it "should set accumulator to zero" do
-      calulator_with_value_two.cancel
-      expect(calulator_with_value_two.accumulator).to eq(0.0) 
+      calculator_with_value_two.cancel
+      expect(calculator_with_value_two.accumulator).to eq(0.0) 
     end
 
     context "division operation" do 
@@ -72,15 +72,15 @@ module NumericalCalculator
       end
 
       it "should update non zero positive accumulator" do
-        expect(calulator_with_value_two.divide(2)).to eq(1.0)
+        expect(calculator_with_value_two.divide(2)).to eq(1.0)
       end
 
       it "should give an error when accumulator is divide by zero" do
-        expect(calulator_with_value_two.divide(0)).to eq(:notanumber)
+        expect(calculator_with_value_two.divide(0)).to eq(:notanumber)
       end
 
       it "should update non zero negative accumulator" do
-        expect(calulator_with_value_two.divide(-2)).to eq(-1.0)
+        expect(calculator_with_value_two.divide(-2)).to eq(-1.0)
       end     
     end
 
@@ -121,6 +121,12 @@ module NumericalCalculator
 
       it "should give error on negative values" do
         expect(calculator_with_negative_value_two.cubert).to eq(:notanumber)
+      end
+    end
+
+    context "Spare Operation" do 
+      it "should return square of a positive accumulator" do 
+        expect(calculator_with_value_two.sqr).to eq(4.0)
       end
     end
   end

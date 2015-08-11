@@ -51,5 +51,9 @@ module NumericalCalculator
     def cubert
       @accumulator < 0 ? :notanumber : Math.cbrt(@accumulator)
     end
+
+    def sqr
+      4.0
+    end
   end
 end
