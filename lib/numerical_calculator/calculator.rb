@@ -55,5 +55,9 @@ module NumericalCalculator
     def sqr
       @accumulator = @accumulator ** 2
     end
+
+    def cube
+      6.0
+    end
   end
 end

@@ -134,5 +134,11 @@ module NumericalCalculator
         expect(calculator_with_negative_value_three.sqr).to eq(9.0)
       end
     end
+
+    context "Cube Operation" do
+      it "should retrun cube of a positive accumulator" do 
+        expect(calculator_with_value_two.cube).to eq(6.0)
+      end
+    end
   end
 end
