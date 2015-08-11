@@ -6,6 +6,7 @@ module NumericalCalculator
     let(:calulator_with_value_two) { Calculator.new(2) }
     let(:calculator_with_negative_value_two){ Calculator.new(-2)}
     let(:calculator_with_value_five){ Calculator.new(5)}
+    let(:calculator_with_value_four){ Calculator.new(4)}
 
     context "default values" do
       it "should be zero" do
@@ -100,6 +101,10 @@ module NumericalCalculator
       it "should negate negative acculmulator" do 
         expect(calculator_with_negative_value_two.neg).to eq(2.0)
       end
+    end
+
+    it "should sqrt the accumulator" do
+      expect(calculator_with_value_four.sqrt).to eq(2.0)
     end
   end
 end
