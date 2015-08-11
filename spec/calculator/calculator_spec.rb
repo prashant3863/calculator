@@ -4,11 +4,11 @@ module NumericalCalculator
   describe Calculator do
     let(:default_calculator) { Calculator.new }
     let(:calculator_with_value_two) { Calculator.new(2) }
-    let(:calculator_with_negative_value_two){ Calculator.new(-2)}
-    let(:calculator_with_negative_value_three){ Calculator.new(-3)}
-    let(:calculator_with_value_five){ Calculator.new(5)}
-    let(:calculator_with_value_four){ Calculator.new(4)}
-    let(:calculator_with_value_eight){ Calculator.new(8)}
+    let(:calculator_with_negative_value_two){ Calculator.new(-2) }
+    let(:calculator_with_negative_value_three){ Calculator.new(-3) } 
+    let(:calculator_with_value_five){ Calculator.new(5) }
+    let(:calculator_with_value_four){ Calculator.new(4) }
+    let(:calculator_with_value_eight){ Calculator.new(8) }
 
     context "default values" do
       it "should be zero" do
@@ -125,7 +125,7 @@ module NumericalCalculator
       end
     end
 
-    context "Spare Operation" do 
+    context "Square Operation" do 
       it "should return square of a positive accumulator" do 
         expect(calculator_with_value_two.sqr).to eq(4.0)
       end

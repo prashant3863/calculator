@@ -21,6 +21,10 @@ module NumericalCalculator
         @calculator.divide(tokens[1].to_f)
       elsif tokens[0] == "abs"
         @calculator.abs
+      elsif tokens[0] == "neg"
+        @calculator.neg
+      elsif tokens[0] == "sqr"
+        @calculator.sqr
       elsif tokens[0] == "cancel"
         @calculator.cancel
       elsif tokens[0] == "exit"
