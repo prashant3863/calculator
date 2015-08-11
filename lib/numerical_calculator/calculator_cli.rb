@@ -29,6 +29,8 @@ module NumericalCalculator
         @calculator.cube
       elsif tokens[0] == "sqrt"
         @calculator.sqrt
+      elsif tokens[0] == "cubert"
+        @calculator.cubert
       elsif tokens[0] == "cancel"
         @calculator.cancel
       elsif tokens[0] == "exit"
