@@ -21,44 +21,53 @@ module NumericalCalculator
     end
 
     context "addition operation" do 
-      it "should update accumulator" do   
-        expect(default_calculator.add(2)).to eq(2.0)
+      it "should update accumulator" do
+        default_calculator.add(2)
+        expect(default_calculator.accumulator).to eq(2.0)
       end
 
       it "should update non zero positive accumulator" do
-        expect(calculator_with_value_two.add(3)).to eq(5.0)
+        calculator_with_value_two.add(3)
+        expect(calculator_with_value_two.accumulator).to eq(5.0)
       end
 
       it "should update non zero negative accumulator" do
-        expect(calculator_with_value_two.add(-1)).to eq(1.0)
+        calculator_with_value_two.add(-1)
+        expect(calculator_with_value_two.accumulator).to eq(1.0)
       end
     end
 
     context "subtraction operation" do 
-      it "should update accumulator" do   
-        expect(default_calculator.subtract(2)).to eq(-2.0)
+      it "should update accumulator" do
+        default_calculator.subtract(2)
+        expect(default_calculator.accumulator).to eq(-2.0)
       end
 
       it "should update non zero positive accumulator" do
-        expect(calculator_with_value_two.subtract(2)).to eq(0.0)
+        calculator_with_value_two.subtract(2)
+        expect(calculator_with_value_two.accumulator).to eq(0.0)
       end
 
       it "should update non zero negative accumulator" do
-        expect(calculator_with_value_two.subtract(-1)).to eq(3.0)
+        calculator_with_value_two.subtract(-1)
+        expect(calculator_with_value_two.accumulator).to eq(3.0)
       end
     end
 
     context "multiply operation" do
       it "should update accumulator" do
-        expect(default_calculator.multiply(3)).to eq(0.0)
+        default_calculator.multiply(3)
+        expect(default_calculator.accumulator).to eq(0.0)
       end
 
       it "should update non zero accumulator" do
-        expect(calculator_with_value_two.multiply(3)).to eq(6.0)
+        calculator_with_value_two.multiply(3)
+        expect(calculator_with_value_two.accumulator).to eq(6.0)
       end
 
       it "should update non zero negative accumulator" do
-        expect(calculator_with_value_two.multiply(-1)).to eq(-2.0)
+        calculator_with_value_two.multiply(-1)
+        expect(calculator_with_value_two.accumulator).to eq(-2.0)
       end
     end
 
@@ -69,11 +78,13 @@ module NumericalCalculator
 
     context "division operation" do 
       it "should update accumulator on division" do
-        expect(default_calculator.divide(3)).to eq(0.0)
+        default_calculator.divide(3)
+        expect(default_calculator.accumulator).to eq(0.0)
       end
 
       it "should update non zero positive accumulator" do
-        expect(calculator_with_value_two.divide(2)).to eq(1.0)
+        calculator_with_value_two.divide(2)
+        expect(calculator_with_value_two.accumulator).to eq(1.0)
       end
 
       it "should give an error when accumulator is divide by zero" do
@@ -81,33 +92,39 @@ module NumericalCalculator
       end
 
       it "should update non zero negative accumulator" do
-        expect(calculator_with_value_two.divide(-2)).to eq(-1.0)
+        calculator_with_value_two.divide(-2)
+        expect(calculator_with_value_two.accumulator).to eq(-1.0)
       end     
     end
 
     context "absolute value operation" do 
       it "should returns positive value for negative input" do
-        expect(calculator_with_negative_value_two.abs).to eq(2.0)
+        calculator_with_negative_value_two.abs
+        expect(calculator_with_negative_value_two.accumulator).to eq(2.0)
       end
 
       it "should returns positive value for positive input" do 
-        expect(calculator_with_value_five.abs).to eq(5.0)
+        calculator_with_value_five.abs
+        expect(calculator_with_value_five.accumulator).to eq(5.0)
       end 
     end
 
     context "neg value operation" do 
       it "should negate the positive accumulator" do
-        expect(calculator_with_value_five.neg).to eq(-5.0)
+        calculator_with_value_five.neg
+        expect(calculator_with_value_five.accumulator).to eq(-5.0)
       end
 
       it "should negate negative acculmulator" do 
-        expect(calculator_with_negative_value_two.neg).to eq(2.0)
+        calculator_with_negative_value_two.neg
+        expect(calculator_with_negative_value_two.accumulator).to eq(2.0)
       end
     end
 
     context "Square root operation" do
       it "should sqrt the accumulator" do
-        expect(calculator_with_value_four.sqrt).to eq(2.0)
+        calculator_with_value_four.sqrt
+        expect(calculator_with_value_four.accumulator).to eq(2.0)
       end
 
       it "should give error when accumulator is negative" do
@@ -117,7 +134,8 @@ module NumericalCalculator
 
     context "Cube root operation" do 
       it "should return cube root of the accumulator" do
-        expect(calculator_with_value_eight.cubert).to eq(2.0)
+        calculator_with_value_eight.cubert
+        expect(calculator_with_value_eight.accumulator).to eq(2.0)
       end
 
       it "should give error on negative values" do
@@ -127,21 +145,25 @@ module NumericalCalculator
 
     context "Square Operation" do 
       it "should return square of a positive accumulator" do 
-        expect(calculator_with_value_two.sqr).to eq(4.0)
+        calculator_with_value_two.sqr
+        expect(calculator_with_value_two.accumulator).to eq(4.0)
       end
 
       it "should evaluate square for negative accumulator" do
-        expect(calculator_with_negative_value_three.sqr).to eq(9.0)
+        calculator_with_negative_value_three.sqr
+        expect(calculator_with_negative_value_three.accumulator).to eq(9.0)
       end
     end
 
     context "Cube Operation" do
       it "should return cube of a positive accumulator" do 
-        expect(calculator_with_value_two.cube).to eq(8.0)
+        calculator_with_value_two.cube
+        expect(calculator_with_value_two.accumulator).to eq(8.0)
       end
 
       it "should return cube for negative accumulator" do
-        expect(calculator_with_negative_value_three.cube).to eq(-27.0)
+        calculator_with_negative_value_three.cube
+        expect(calculator_with_negative_value_three.accumulator).to eq(-27.0)
       end
     end
   end

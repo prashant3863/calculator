@@ -41,15 +41,23 @@ module NumericalCalculator
     end
 
     def neg
-      @accumulator = -@accumulator 
+      @accumulator = 0 - @accumulator 
     end
 
     def sqrt
-      @accumulator < 0 ? :notanumber : Math.sqrt(@accumulator)
+      if @accumulator < 0 
+        :notanumber 
+      else 
+        @accumulator = Math.sqrt(@accumulator)
+      end
     end
 
     def cubert
-      @accumulator < 0 ? :notanumber : Math.cbrt(@accumulator)
+      if @accumulator < 0 
+        :notanumber 
+      else 
+        @accumulator = Math.cbrt(@accumulator)
+      end
     end
 
     def sqr
