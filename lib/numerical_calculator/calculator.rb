@@ -38,6 +38,10 @@ module NumericalCalculator
       else
         @accumulator
       end
-    end     
+    end
+
+    def neg
+      -5.0
+    end
   end
 end

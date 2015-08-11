@@ -83,13 +83,17 @@ module NumericalCalculator
     end
 
     context "absolute value operation" do 
-      it "returns positive value for negative input" do
+      it "should returns positive value for negative input" do
         expect(calculator_with_negative_value_two.abs).to eq(2.0)
       end
 
-      it "returns positive value for positive input" do 
+      it "should returns positive value for positive input" do 
         expect(calculator_with_value_five.abs).to eq(5.0)
       end 
+    end
+
+    it "should negate the accumulator" do
+      expect(calculator_with_value_five.neg).to eq(-5.0)
     end
   end
 end
