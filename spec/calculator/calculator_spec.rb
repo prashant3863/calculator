@@ -7,6 +7,7 @@ module NumericalCalculator
     let(:calculator_with_negative_value_two){ Calculator.new(-2)}
     let(:calculator_with_value_five){ Calculator.new(5)}
     let(:calculator_with_value_four){ Calculator.new(4)}
+    let(:calculator_with_value_eight){ Calculator.new(8)}
 
     context "default values" do
       it "should be zero" do
@@ -111,6 +112,16 @@ module NumericalCalculator
       it "should give error when accumulator is negative" do
         expect(calculator_with_negative_value_two.sqrt).to eq(:notanumber)
       end 
+    end
+
+    context "Cube root operation" do 
+      it "should return cube root of the accumulator" do
+        expect(calculator_with_value_eight.cubert).to eq(2.0)
+      end
+
+      it "should give error on negative values" do
+        expect(calculator_with_negative_value_two.cubert).to eq(:notanumber)
+      end
     end
   end
 end
