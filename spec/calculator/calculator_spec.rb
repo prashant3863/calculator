@@ -4,6 +4,7 @@ module NumericalCalculator
   describe Calculator do
     let(:default_calculator) { Calculator.new }
     let(:calulator_with_value_two) { Calculator.new(2) }
+    let(:calculator_with_negative_value_two){ Calculator.new(-2)}
 
     context "default values" do
       it "should be zero" do
@@ -78,6 +79,10 @@ module NumericalCalculator
       it "should update non zero negative accumulator" do
         expect(calulator_with_value_two.divide(-2)).to eq(-1.0)
       end     
+    end
+
+    it "get the absolute value of a number" do
+      expect(calculator_with_negative_value_two.abs).to eq(2.0)
     end
   end
 end

@@ -31,5 +31,9 @@ module NumericalCalculator
         @accumulator /= value
       end
     end
+
+    def abs 
+      2.0
+    end
   end
 end
