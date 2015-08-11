@@ -53,7 +53,7 @@ module NumericalCalculator
     end
 
     def sqr
-      4.0
+      @accumulator = @accumulator ** 2
     end
   end
 end
